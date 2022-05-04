@@ -1,15 +1,17 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { Products, Product } from '../types/Products'
+import { Products, SingleProduct } from '../types/Products'
 // Define a service using a base URL and expected endpoints
 export const productsApi = createApi({
     reducerPath: 'productsApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com/' }),
+    baseQuery: fetchBaseQuery({
+        baseUrl: 'https://course-api.co/',
+    }),
     endpoints: (builder) => ({
         getAllProducts: builder.query<Products, void>({
-            query: () => `products/`,
+            query: () => `react-store-products`,
         }),
-        getSingleProduct: builder.query<Product, string>({
-            query: (id) => `products/${id}`,
+        getSingleProduct: builder.query<SingleProduct, string>({
+            query: (id) => `react-store-single-product?id=${id}`,
         }),
     }),
 })

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
-import { Home, ProductsPage } from './pages'
+import { Home, ProductsPage, SingleProductPage } from './pages'
 import './App.css'
 
 function App() {
@@ -15,6 +15,9 @@ function App() {
             </Routes>
             <Routes>
                 <Route path="/Products" element={<ProductsPage />} />
+            </Routes>
+            <Routes>
+                <Route path="/Products/:id" element={<SingleProductPage />} />
             </Routes>
             <Footer />
         </Router>

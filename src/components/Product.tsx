@@ -10,13 +10,12 @@ function Product({ product }: AppProps) {
     return (
         <div>
             <div className="product-container">
-                <img src={product.image} alt={product.title} />
                 <Link to={`/products/${product.id}`} className="link">
-                    seleziona
+                    <img src={product.image} alt={product.name} />
                 </Link>
             </div>
             <footer>
-                <h5>{product.title}</h5>
+                <h5>{product.name}</h5>
                 <p>{product.price}</p>
             </footer>
         </div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { ImagesType } from '../types/Types'
+import { ImageType } from '../types/Types'
 
 type AppProps = {
-    images: ImagesType
+    images: ImageType[]
 }
 
 function ProductImages({ images }: AppProps) {

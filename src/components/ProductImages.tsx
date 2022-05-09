@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ImagesType } from '../types/Products'
+import { ImagesType } from '../types/Types'
 
 type AppProps = {
     images: ImagesType

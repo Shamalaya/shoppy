@@ -15,7 +15,7 @@ export interface SingleProduct {
     stock: number
     price: number
     shipping: boolean
-    colors: Array<string>
+    colors: string[]
     category: string
     images: Array<{
         id: string
@@ -25,11 +25,11 @@ export interface SingleProduct {
         filename: string
         size: number
         type: string
-        thumbnails: [
-            small: { url: string; width: number; height: number },
-            large: { url: string; width: number; height: number },
+        thumbnails: {
+            small: { url: string; width: number; height: number }
+            large: { url: string; width: number; height: number }
             full: { url: string; width: number; height: number }
-        ]
+        }
     }>
     reviews: number
     stars: number
@@ -53,3 +53,12 @@ export interface ImagesType
             full: { url: string; width: number; height: number }
         ]
     }> {}
+
+export interface CartItemType {
+    id: string
+    name: string
+    color: string
+    amount: number
+    image: string
+    price: number
+}

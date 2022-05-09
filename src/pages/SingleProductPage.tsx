@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useGetSingleProductQuery } from '../services/productsApi'
 import { Loading, Error } from '../components'
 import ProductImages from '../components/ProductImages'
+import AddToCart from '../components/AddToCart'
 
 function SingleProductPage() {
     const { id } = useParams()
@@ -17,7 +18,7 @@ function SingleProductPage() {
     if (product === undefined) {
         return <Error />
     }
-    const { name, price, description, images } = product
+    const { name, price, description, images, stock } = product
     return (
         <div>
             <div>
@@ -32,6 +33,7 @@ function SingleProductPage() {
                         <p className="description">{description}</p>
 
                         <hr />
+                        {stock > 0 && <AddToCart product={product} />}
                     </section>
                 </div>
             </div>

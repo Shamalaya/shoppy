@@ -1,8 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { productsApi } from '../services/productsApi'
+import cartReducer from '../services/cartSlice'
 
 export const store = configureStore({
-    reducer: { [productsApi.reducerPath]: productsApi.reducer },
+    reducer: {
+        [productsApi.reducerPath]: productsApi.reducer,
+        cart: cartReducer,
+    },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(productsApi.middleware),
 })
